@@ -1,1 +1,7 @@
-<p>cart-details works!</p>
+<h3>Cart Details</h3>
+
+<div class="row">
+    <div class="col-xs-12">
+        <app-cart-item *ngFor="let detail of cartDetails; let i = index" [detail]="detail" [index]=i></app-cart-item>
+    </div>
+</div>

@@ -11,6 +11,7 @@ import { CartDetailsComponent } from './carts/cart-details/cart-details.componen
 // Services
 import { ProductsService } from './products/products.service';
 import { CartsService } from './carts/carts.service';
+import { CartItemComponent } from './carts/cart-details/cart-item/cart-item.component';
 // Routes
 const appRoutes: Routes = [
   { path: '', component: ProductListComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     ProductListComponent,
     ProductItemComponent,
-    CartDetailsComponent
+    CartDetailsComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

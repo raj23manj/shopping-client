@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class CartsService {
@@ -26,20 +26,25 @@ export class CartsService {
         cart: { is_new: "true", cart_detail: cartDetail }
       };
 
-      uri = this.API_URL + "carts"
+      uri = this.API_URL + "carts";
     } else {
       payload = {
         cart_detail: cartDetail
       };
 
-      uri = this.API_URL + `carts/${this.cartId}/cart_details`
+      uri = this.API_URL + `carts/${this.cartId}/cart_details`;
     }
 
     return this.httpClient.post<any>(uri, payload, this.httpOptions);
   }
 
   getTotalCartItems() {
-    let uri = this.API_URL + `carts/${this.cartId}/cart_details`
+    let uri = this.API_URL + `carts/${this.cartId}/cart_details`;
+    return this.httpClient.get<any>(uri);
+  }
+
+  getCartDiscountedDetails() {
+    let uri = this.API_URL + `carts/${this.cartId}/cart_details/calculated_cart_details`;
     return this.httpClient.get<any>(uri);
   }
 
