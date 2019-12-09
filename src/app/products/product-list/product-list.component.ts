@@ -10,8 +10,6 @@ import { Subscription } from 'rxjs';
 })
 export class ProductListComponent implements OnInit {
 
-
-
   products: Product[] = [];
 
   subscription: Subscription;
@@ -20,13 +18,12 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.productsService.getProducts().subscribe((data: any) => {
-      console.log(data);
+      this.products = data.data;
     });
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 
 }

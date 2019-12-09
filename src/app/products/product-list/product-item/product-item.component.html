@@ -1,9 +1,14 @@
-<a>
-    <div class="pull-left">
-        <h4 class="list-group-item-heading">Name</h4>
-        <p class="list-group-item-text">Description</p>
-        <span class="pull-right">
-            Button
-        </span>
+<div class="row product-item">
+    <div class="col-md-12">
+        <a>
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">Name: {{ product.name }}</h4>
+                <p class="list-group-item-text">Price: {{ product.price }} Rs.</p>
+                <div class="col-md-12">
+                    <input type="text" name="Qty" class="col-md-4" #qty>
+                    <input class="btn btn-primary btn-xs col-md-4" (click)="onAddServer(qty)" type="Input" value="Add">
+                </div>
+            </div>
+        </a>
     </div>
-</a>
+</div>
