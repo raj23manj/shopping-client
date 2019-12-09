@@ -48,4 +48,13 @@ export class CartsService {
     return this.httpClient.get<any>(uri);
   }
 
+  getCurrentActiveCart() {
+    return this.httpClient.get<any>(this.API_URL + "carts/cart_is_active");
+  }
+
+  deactivateCurrentCart() {
+    let payload: any = { cart: { de_activate: "true" } }
+    return this.httpClient.patch<any>(this.API_URL + `carts/${this.cartId}`, payload);
+  }
+
 }

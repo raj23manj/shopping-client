@@ -1,7 +1,23 @@
-<h3>Cart Details</h3>
+<div class="col-xs-12">
+    <h2 class="col-xs-4">Cart Details</h2>
+    <div class="col-xs-4">
+        <input class="btn btn-primary btn-xs col-md-6" (click)="checkout()" type="button" value="Checkout">
+    </div>
+</div>
+
+<div class="col-xs-12 code-red">
+    <p>Click On The Checkout Button To make this current cart inactive, and start new cart to add new items</p>
+    <p>To Test Out Different Test Cases</p>
+</div>
 
 <div class="row">
     <div class="col-xs-12">
         <app-cart-item *ngFor="let detail of cartDetails; let i = index" [detail]="detail" [index]=i></app-cart-item>
     </div>
+</div>
+
+<div class="row col-xs-12">
+    <h3 class="col-xs-12">Discounted Total: {{ discounted_total }}</h3>
+    <h3 class="col-xs-12">Additional Discount: {{ additional_discount }}</h3>
+    <h3 class="col-xs-12">Total Price: {{ total_price }}</h3>
 </div>

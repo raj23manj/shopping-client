@@ -1,1 +1,16 @@
-<p>cart-item works!</p>
+<div class="row cart-item">
+    <div class="col-md-12">
+        <a>
+            <div class="pull-left">
+                <h2>Item {{index + 1}}</h2>
+                <div class="col-md-12">
+                    <h4 class="list-group-item-heading">Product Name: {{ detail.product_name }}</h4>
+                    <p class="list-group-item-text">Actual Product Price(per qty): Rs.{{ detail.actual_product_price }} </p>
+                    <p class="list-group-item-text">Qty Ordered: {{ detail.cart_qty }}</p>
+                    <p class="list-group-item-text">Actual Total({{detail.cart_qty}} * {{detail.actual_product_price}}): Rs.{{ detail.actual_total }} </p>
+                    <p class="list-group-item-text">Discounted Total Calculated: Rs.{{ detail.discounted_total }} </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
