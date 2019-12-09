@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductsService {
 
-  constructor() { }
+  readonly API_URL = 'http://localhost:3000/api/v1/';
+
+  constructor(private httpClient: HttpClient) { }
+
+  getProducts() {
+    return this.httpClient.get<any>(this.API_URL + 'products');
+  }
 }
