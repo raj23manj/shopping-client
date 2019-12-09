@@ -2,11 +2,18 @@
     <div class="col-md-12">
         <a>
             <div class="pull-left">
-                <h4 class="list-group-item-heading">Name: {{ product.name }}</h4>
-                <p class="list-group-item-text">Price: {{ product.price }} Rs.</p>
-                <div class="col-md-12">
-                    <input type="text" name="Qty" class="col-md-4" #qty>
-                    <input class="btn btn-primary btn-xs col-md-4" (click)="onAddServer(qty)" type="Input" value="Add">
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading">Name: {{ product.name }}</h4>
+                    <p class="list-group-item-text">Price: {{ product.price }} Rs.</p>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-8">
+                        <input type="text" name="Qty" class="col-md-6" #qty>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="btn btn-primary btn-xs col-md-6" (click)="onAddServer(qty)" type="Input" value="Add">
+                    </div>
                 </div>
             </div>
         </a>
