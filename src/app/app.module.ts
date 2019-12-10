@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [ProductsService, CartsService],
   bootstrap: [AppComponent]

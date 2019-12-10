@@ -2,18 +2,22 @@
     <div class="col-md-12">
         <a>
             <div class="pull-left">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h4 class="list-group-item-heading">Name: {{ product.name }}</h4>
                     <p class="list-group-item-text">Price: {{ product.price }} Rs.</p>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="col-md-8">
-                        <input type="text" name="Qty" class="col-md-6" #qty>
+                <div class="col-md-12">
+                    <div class="col-md-12 no-left-padding">
+                        <input type="text" name="Qty" class="col-md-4" #qty>
+                        <div class="col-md-4">Added {{qtyAdded}} Items</div>
                     </div>
-                    <div class="col-md-8">
-                        <input class="btn btn-primary btn-xs col-md-6" (click)="onAddServer(qty)" type="button" value="Add">
+                    <div class="col-md-12 no-left-padding">
+                        <input class="btn btn-primary btn-xs col-md-4" (click)="onAddServer(qty)" type="button" value="Add">
                     </div>
+                </div>
+                <div class="col-md-12 pull-right">
+                    <span *ngIf="!isValid">Qty Not Valid!</span>
                 </div>
             </div>
         </a>

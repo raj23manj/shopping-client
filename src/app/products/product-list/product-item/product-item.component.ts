@@ -12,6 +12,8 @@ import { HttpResponse } from '../../../../../node_modules/@angular/common/http';
 export class ProductItemComponent implements OnInit {
 
   @Input() product: Product;
+  isValid: boolean = true;
+  qtyAdded: number = 0;
 
   constructor(private cartsService: CartsService) { }
 
@@ -19,11 +21,19 @@ export class ProductItemComponent implements OnInit {
   }
 
   onAddServer(qty: HTMLInputElement) {
-    this.cartsService.createCartDetails({ product_id: this.product.id, qty: qty.value, cart_id: this.cartsService.cartId })
-      .subscribe((response: HttpResponse<any>) => {
-        if (response.data.cart_id === undefined) {
-          this.cartsService.cartId = response.data.id;
-        }
-      });
+    if (+qty.value > 0) {
+      this.cartsService.createCartDetails({ product_id: this.product.id, qty: qty.value, cart_id: this.cartsService.cartId })
+        .subscribe((response: HttpResponse<any>) => {
+          if (response.data.cart_id === undefined) {
+            this.cartsService.cartId = response.data.id;
+          }
+          this.isValid = true;
+          this.qtyAdded = +qty.value;
+          qty.value = null;
+        });
+    } else {
+      this.isValid = false;
+    }
+
   }
 }
