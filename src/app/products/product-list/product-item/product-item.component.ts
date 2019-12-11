@@ -23,7 +23,7 @@ export class ProductItemComponent implements OnInit {
   onAddServer(qty: HTMLInputElement) {
     if (+qty.value > 0) {
       this.cartsService.createCartDetails({ product_id: this.product.id, qty: qty.value, cart_id: this.cartsService.cartId })
-        .subscribe((response: HttpResponse<any>) => {
+        .subscribe((response) => {
           if (response.data.cart_id === undefined) {
             this.cartsService.cartId = response.data.id;
           }

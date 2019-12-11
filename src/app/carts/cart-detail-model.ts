@@ -4,19 +4,14 @@ export class CartDetailModel {
     public product_name: string;
     public actual_product_price: number;
     public actual_total: number;
-    public discounted_total: number;
-    public actual_discount_price: number;
-    public actual_discount_qty: number;
-
+    public discounted_total: number
 
     constructor(cart_id: number,
         cart_qty: number,
         product_name: string,
         actual_product_price: number,
         actual_total: number,
-        discounted_total: number,
-        actual_discount_price: number,
-        actual_discount_qty: number
+        discounted_total: number
     ) {
         this.cart_id = cart_id;
         this.cart_qty = cart_qty;
@@ -24,7 +19,5 @@ export class CartDetailModel {
         this.actual_product_price = actual_product_price;
         this.actual_total = actual_total;
         this.discounted_total = discounted_total;
-        this.actual_discount_price = actual_discount_price;
-        this.actual_discount_qty = actual_discount_qty;
     }
 }
