@@ -17,7 +17,16 @@
 </div>
 
 <div class="row col-xs-12">
-    <h3 class="col-xs-12">Total Price: {{ total_price }}</h3>
-    <h3 class="col-xs-12">Additional Discount: {{ additional_discount }}</h3>
-    <h3 class="col-xs-12">Discounted Total: {{ discounted_total }}</h3>
+    <h3 class="col-xs-12">Total Price:
+        <b> Rs.{{ no_discount_total }}</b>
+    </h3>
+    <h3 class="col-xs-12">Total Price With Discount Applied:
+        <b>Rs.{{ total_price }}</b>
+    </h3>
+    <h3 class="col-xs-12">Additional Discount On Total:
+        <b>Rs.{{ additional_discount }}</b>
+    </h3>
+    <h3 class="col-xs-12">Discounted Total:
+        <b>Rs.{{ discounted_total }}</b>
+    </h3>
 </div>

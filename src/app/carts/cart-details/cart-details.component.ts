@@ -15,6 +15,7 @@ export class CartDetailsComponent implements OnInit {
   additional_discount: number = 0;
   discounted_total: number = 0;
   total_price: number = 0;
+  no_discount_total: number = 0;
 
   subscription: Subscription;
   subscription2: Subscription;
@@ -35,6 +36,7 @@ export class CartDetailsComponent implements OnInit {
             this.additional_discount = res.data.additional_discount;
             this.discounted_total = res.data.discounted_total;
             this.total_price = res.data.total_price;
+            this.no_discount_total = res.data.no_discount_total
           });
       });
   }
